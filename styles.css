@@ -1,0 +1,121 @@
+
+    /* quitamos márgenes/paddings y activamos box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* estilo general: fuente, fondo y espacio */
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  color: #222;
+  padding: 24px;
+}
+
+/* título centrado */
+h1 {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+/* grid: las tarjetas se acomodan y no quedan feas (esperremos que así sea) */
+.contenedor-tarjetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* tarjeta base */
+.tarjeta {
+  background: white;
+  color: #222;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+}
+
+/* imagen responsive + suave para el zoom */
+.tarjeta img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.80s ease;
+}
+
+/* título */
+.tarjeta h2 {
+  font-size: 1.1rem;
+  margin: 12px 0 6px;
+}
+
+/* descripción */
+.tarjeta p {
+  font-size: 15px;
+  color: #140707;
+  margin-bottom: 10px;
+}
+
+/* precio */
+.tarjeta .precio {
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+/* botón base */
+.tarjeta button {
+  background: #ff6600;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+/* hover tarjeta (se agranda) */
+.tarjeta:hover {
+  transform: scale(1.03);
+}
+
+/* zoom imagen al pasar por la tarjeta */
+.tarjeta:hover img {
+  transform: scale(1.05);
+}
+
+/* hover botón (color + escala chiquita) */
+.tarjeta button:hover {
+  background: #e45600;
+  transform: scale(1.05);
+}
+
+/* móvil: fondo amarillo, texto negro */
+@media (max-width: 600px) {
+  .tarjeta {
+    background: yellow;
+    color: black;
+  }
+}
+
+/* tablet: fondo verde, texto blanco */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .tarjeta {
+    background: green;
+    color: white;
+  }
+}
+
+/* desktop: fondo azul, texto blanco */
+@media (min-width: 1025px) {
+  .tarjeta {
+    background: blue;
+    color: white;
+  }
+}
+
+/*NADA ME QUERÍA DAR, Y ERA PORQUÉ COMENTÉ CON <!-----> EN VEZ DE /* :CCCCC casi me explota la cabeza, Aiuda*/
